@@ -22,21 +22,21 @@ User story
      - i. Hay que estandarizar los teléfonos
      - ii. Hay que separar provincia y distrito
      - iii. Hay que subdividir la información en “waves”
-      c. Muchos cuestionarios son considerados inútiles ya sea porque están mal
+    - c. Muchos cuestionarios son considerados inútiles ya sea porque están mal
          llenados o incompletos; en este caso se debe de contactar a los hospitales
-            i. Un problema frecuente (en el contacto y en el manejo de la base de
+       - i. Un problema frecuente (en el contacto y en el manejo de la base de
                datos) es que hay mucha movilidad entre los doctores.
-           ii. Se crean un par de tablas una en la que se categorizan los problemas
+        - ii. Se crean un par de tablas una en la que se categorizan los problemas
                que tuvieron los hospitales en el llenado del cuestionario y otra en la
                que se enlistan los hospitales a contactar para corregir el problema
-      d. Los cuestionarios que se llenan correctamente serán procesados
+     - d. Los cuestionarios que se llenan correctamente serán procesados
           manualmente por empleados de Voxmapp
 
 5. La generación de conocimiento a partir de los datos se hace sobre aquellos del
 punto 4.c
-      a. Los cuestionarios “limpios” se almacenan en sheets de excel y se segmentan
+    - a. Los cuestionarios “limpios” se almacenan en sheets de excel y se segmentan
          a diferentes niveles geográficos
-      b. Se analizan los datos corriendo códigos en Stata
-      c. Se crean vistas con la información para poder alimentarlas a Tableu
-      d. Se actualiza periódicamente el Tableu con nueva información (gap muy
+    - b. Se analizan los datos corriendo códigos en Stata
+    - c. Se crean vistas con la información para poder alimentarlas a Tableu
+    - d. Se actualiza periódicamente el Tableu con nueva información (gap muy
          grande)
