@@ -1,6 +1,6 @@
 # ProyectoVoxmapp
 
-User story
+## User story
 
 1. Es una empresa digital francesa que asiste a hospitales en la gobernanza de datos;
    empresa con fines sociales que recolecta y trabaja con data de zonas marginadas
@@ -40,3 +40,7 @@ punto 4.c
     - c. Se crean vistas con la información para poder alimentarlas a Tableu
     - d. Se actualiza periódicamente el Tableu con nueva información (gap muy
          grande)
+
+## Problem domain
+
+Voxmapp quiere mejorar su proceso de recepción y manejo de datos. Actualmente reciben los datos como un solo documento en el que las diferentes respuestas al cuestionario se separan por comas y otros caracteres. Además, los datos no se reciben con un formato estándar debido a que se llenan desde diferentes regiones y contextos, lo que causa problemas a la hora de segmentar y analizar los datos. Este último proceso se termina haciendo a mano. Poder encontrar un método más eficiente de recepción y estandarización de datos sería de su interés. Luego de analizar los datos, Voxmapp sube estos periodicamente a Tableu. El problema aquí se presenta a la hora de querer actualizar las vistas en Tableu, pues se debe de hacer manualmente. Encontrar la forma de automatizar este proceso también sería de su interés.
