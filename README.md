@@ -8,7 +8,7 @@ User story
 2. La empresa trabaja con hospitales y centros covid en Afganistán (tiene un proyecto
    con su gobierno) monitoreándolos para reducir el impacto negativo que la poca
    infraestructura del país tiene sobre estos.
--a. Afganistán es problemático por su poca infraestructura de servicios de
+-  a. Afganistán es problemático por su poca infraestructura de servicios de
          telecomunicación
 
 3. Se registra (con datos estáticos) a los hospitales con entrevistas hechas por
