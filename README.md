@@ -44,3 +44,6 @@ punto 4.c
 ## Problem domain
 
 Voxmapp quiere mejorar su proceso de recepción y manejo de datos. Actualmente reciben los datos como un solo documento en el que las diferentes respuestas al cuestionario se separan por comas y otros caracteres. Además, los datos no se reciben con un formato estándar debido a que se llenan desde diferentes regiones y contextos, lo que causa problemas a la hora de segmentar y analizar los datos. Este último proceso se termina haciendo a mano. Poder encontrar un método más eficiente de recepción y estandarización de datos sería de su interés. Luego de analizar los datos, Voxmapp sube estos periodicamente a Tableu. El problema aquí se presenta a la hora de querer actualizar las vistas en Tableu, pues se debe de hacer manualmente. Encontrar la forma de automatizar este proceso también sería de su interés.
+
+### link de la encuesta
+https://docs.google.com/forms/d/e/1FAIpQLSfoy5UP6hdYlPDM2dWIeAZoOkyjFUE8UmxqyVb1mxXzBwfo0w/viewform
