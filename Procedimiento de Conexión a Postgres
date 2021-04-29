@@ -15,7 +15,7 @@ Por ultimo, en el codigo se ve una variable como la siguiente:
                                       port="5432",
                                       database="proyectoFinal")n")"
                                   
-Conocer estos datos para son tambien necesarios para lograr la conexion a postgres, ya que estos datos pueden varirar.
+Conocer estos datos son necesarios para lograr la conexion a postgres, ya que estos datos pueden varirar.
 "database" es simplemente el nombre de la base de datos en donde se desea agregar las respuestas a la encuesta, con la 
 tabla adecuada tambien proporcionada en este repo de github.
 "port" El port no es necesario ponerlo ya que en default es 5432, pero en caso de ser uno diferente se debera agregar
