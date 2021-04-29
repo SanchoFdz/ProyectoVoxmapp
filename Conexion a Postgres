@@ -7,12 +7,18 @@ Una vez instalado para configurarlo se usa:
 
 --"python setup.py build"
 
-Por ultimo, en el codigo se ve una variable como la siguiente
+Por ultimo, en el codigo se ve una variable como la siguiente:
 
---"conn = psycopg2.connect(
-        host="localhost",
-        database="prueba",
-        user="prueba",
-        password="admin")"
-        
-  
+--"connection = psycopg2.connect(user="postgres",
+                                      password="admin",
+                                      host="localhost",
+                                      port="5432",
+                                      database="proyectoFinal")n")"
+                                  
+Conocer estos datos para son tambien necesarios para lograr la conexion a postgres, ya que estos datos pueden varirar.
+"database" es simplemente el nombre de la base de datos en donde se desea agregar las respuestas a la encuesta, con la 
+tabla adecuada tambien proporcionada en este repo de github.
+"port" El port no es necesario ponerlo ya que en default es 5432, pero en caso de ser uno diferente se debera agregar
+"host" es el servidor de la base de datos, este tambien normalemnte es "localhost", pero puede variar
+Y por ultimo, "host" y "password" son el usuario y la contraseña que tiene permisos de agregar elementos a la base de datos.
+No necesariamente debe ser el user creador pero si tiene que tener permisos para hacer modificiones
