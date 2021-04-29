@@ -43,6 +43,7 @@ for j in respuestas:
         respuesta = i
     #en este try se establece la conexión con nuestra base de datos y se hacen las operaciones necesarias (insert, update, etc.). La idea es separar el programa en diferentes queries para actualizar las tablas correspondienes una vez definida la estructura de la base de datos
     try:
+        #variable connection que contiene todos los datos de nuestra base de datos
         connection = psycopg2.connect(user="postgres",
                                       password="admin",
                                       host="localhost",
