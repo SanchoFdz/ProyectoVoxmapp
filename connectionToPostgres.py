@@ -1,51 +1,74 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Apr 27 20:59:58 2021
+Created on Fri Apr 23 22:44:15 2021
 
 @author: javi2
 """
 
+
+from __future__ import print_function
+from googleapiclient.discovery import build
+from google.oauth2 import service_account
 import psycopg2
 
+SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
+SERVICE_ACCOUNT_FILE = 'keys.json' #Credenciales de Google Cloud
 
-def insert_vendor(vendor_name):
-    """ insert a new vendor into the vendors table """
+creds = None
+creds = service_account.Credentials.from_service_account_file(
+        SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 
-    sql = "INSERT INTO encuesta(vendor_name) VALUES (%s) RETURNING vendor_id;"
 
-    conn = psycopg2.connect(
-        host="localhost",
-        database="prueba",
-        user="prueba",
-        password="admin")
+# The ID and range of a sample spreadsheet.
+SAMPLE_SPREADSHEET_ID = '1FvXedhjqj73MKXNi78o29VcIhmwWTleeumSDnS6IUY4' #ID de spreadsheet
 
-    vendor_id = None
+service = build('sheets', 'v4', credentials=creds) #para llamar a la API de Google
+sheet_range="Hoja1!B2:AH" #Rango a leer
 
+# Call the Sheets API
+sheet = service.spreadsheets()
+result = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID, 
+                            range = sheet_range).execute()
+
+values = result.get('values', []) #regresa los valores en una lista de listas
+print(values)
+
+respuestas = values#esta es la lista de listas
+
+#Pasa toda la info del Google Sheets
+
+for j in respuestas:
+    
+    for i in values:
+        respuesta = i
+    
     try:
-        # create a new cursor
-        cur = conn.cursor()
-        # execute the INSERT statement
-        cur.execute(sql, (vendor_name,))
-        # get the generated id back
-        vendor_id = cur.fetchone()[0]
-        # commit the changes to the database
-        conn.commit()
-        # close communication with the database
-        cur.close()
-
-    except (Exception, psycopg2.DatabaseError) as error:
-        print('not made it')
-        print(error)
-
+        connection = psycopg2.connect(user="postgres",
+                                      password="admin",
+                                      host="localhost",
+                                      port="5432",
+                                      database="proyectoFinal")
+        cursor = connection.cursor()
+    
+        postgres_insert_query = """ INSERT INTO encuesta (pregunta1,pregunta2,pregunta3,pregunta4,pregunta5,pregunta6,pregunta7,pregunta8,pregunta9,pregunta10,pregunta11,pregunta12,pregunta13,pregunta14,pregunta15,pregunta16,pregunta17,pregunta18,pregunta19,pregunta20,pregunta21,pregunta22,pregunta23,pregunta24,pregunta25,pregunta26,pregunta27,pregunta28,pregunta29,pregunta30,pregunta31,pregunta32,pregunta33) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
+        
+        
+        tupla = tuple(respuesta)
+        record_to_insert = tupla
+        cursor.execute(postgres_insert_query, record_to_insert)
+    
+        connection.commit()
+        count = cursor.rowcount
+        print(count, "Record inserted successfully into mobile table")
+    
+    except (Exception, psycopg2.Error) as error:
+        print("Failed to insert record into mobile table", error)
+    
     finally:
-
-        if conn is not None:
-            conn.close()
-        print('made it')
-
-    return vendor_id
-
-
-if _name_ == '_main_':
-    # insert one vendor
-    insert_vendor("3M Co.")
+        # closing database connection.
+        if connection:
+            cursor.close()
+            connection.close()
+            print("PostgreSQL connection is closed")
+            
+            
