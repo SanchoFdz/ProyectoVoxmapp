@@ -1,3 +1,9 @@
+/*Esta es la tabla que utilizamos para hacer la prueba de conexión, una tabla con 33 columnas correspondientes a las 33 preguntas del formulario
+  Para poder correr nuestra prueba, se puede seguir el mismo procedimiento que nosotros:
+  Es necesario crear una nueva conexión llamada proyectoFinal desde DBeaver para crear una base de datos llamada proyectoFinal (con las especificaciones que vienen en la sección de conexión
+  del archivo connectionToPostgres.py), posteriormente, en el esquema public, se procede a crear la siguiente tabla
+*/
+
 CREATE TABLE encuesta (
    pregunta1 varchar(50),
    pregunta2 varchar(50),
