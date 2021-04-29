@@ -1,0 +1,16 @@
+Para lograr la conexion en Postgres, se necesita instalar psycopg2 en la computadora en la cual se desea lograr la conexion. 
+Para esto se debe usar en la terminal el comando:
+
+--"pip install psycopg2"
+
+Una vez instalado para configurarlo se usa:
+
+--"python setup.py build"
+
+Por ultimo, en el codigo se ve una variable como la siguiente
+
+--"conn = psycopg2.connect(
+        host="localhost",
+        database="prueba",
+        user="prueba",
+        password="admin")"
